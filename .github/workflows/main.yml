@@ -17,6 +17,6 @@ jobs:
         pip install --upgrade pip
         pip install -r requirements.txt
     - name: set PYTHONPATH
-      run: echo "PYTHONPATH" -$GITHUB_WORKSPACE>>$GITHUB_ENV
+      run: echo "PYTHONPATH"=$GITHUB_WORKSPACE>>$GITHUB_ENV
     - name: run tests
       run: pytest tests --cov=app --cov-report=xml
